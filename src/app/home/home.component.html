@@ -1,0 +1,19 @@
+<div class="todo-container">
+  <h1>Todo App</h1>
+
+  <div class="input-group">
+    <input [(ngModel)]="todoText" type="text" placeholder="Add a new task" id="todo-input">
+    <button (click)="addTodo()" id="add-btn">Add</button>
+  </div>
+
+  <ul class="todo-list">
+    <li *ngFor="let item of todoItems; let i = index">
+      {{ item.text }}
+      <div class="todo-actions">
+        <button class="edit-btn" (click)="editTodo(i)">Edit</button>
+        <button class="delete-btn" (click)="deleteTodo(i)">Delete</button>
+      </div>
+    </li>
+  </ul>
+</div>
+
